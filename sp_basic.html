@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML>
+<head>
+<title>Secretary Problem</title>
+<!-- The basic JavaScript secretary problem -->
+<!--
+-1. a press-able button
+-2. display of a number read from a list
+-3. 'no/next' button action to go forward in list
+-4. 'yes' button action to stop
+-5. display of position in list
+-6. a press-able button
+7. read in a list
+8. store response
+-->
+
+<script type="text/javascript">
+var thisList = [1,2,3,4,5,6,7,8,9,0];
+var thisListCopy = thisList.slice(0);
+var last_item = thisListCopy.pop();
+var thisListOriginal = thisList.slice(0);
+
+function docwrite(x)
+{
+	document.getElementById("message").innerHTML = x;
+}
+
+function functionChoose()
+{
+	alert('Position: ' + thisListOriginal.indexOf(x) + ', Value: ' + x);
+}
+
+function functionNext()
+{
+	x = thisList.shift();
+	document.getElementById("message").innerHTML = x;
+	if( x == last_item) alert('Position: ' + thisListOriginal.indexOf(x) + ', Value: ' + x);
+}
+</script>
+
+</head>
+
+
+
+<body>
+<p>Please choose the highest number</p>
+<p>
+<div id="message"></div>
+</p>
+<p>
+<button onclick="functionChoose()">Choose</button>
+&nbsp;&nbsp;&nbsp;
+<button onclick="functionNext()">Next</button>
+</p>
+<script type="text/javascript">
+x = thisList.shift();
+document.getElementById("message").innerHTML = x;
+</script>
+</body>
+</HTML>
